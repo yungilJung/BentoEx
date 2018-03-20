@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<item
+    android:id="@+id/menuOrder"
+    android:title="주문표"
+    android:icon="@android:drawable/ic_menu_save">
+
+</item>
+<item
+    android:id="@+id/menuOrderOrg"
+    android:title="단체주문"
+    android:icon="@android:drawable/ic_menu_agenda">
+</item>
+<item
+    android:id="@+id/menuStore"
+    android:title="점포보기"
+    android:icon="@android:drawable/ic_menu_call">
+</item>
+<item
+    android:id="@+id/menuQNA"
+    android:title="문의"
+    android:icon="@android:drawable/ic_menu_help"></item>
+</menu>
