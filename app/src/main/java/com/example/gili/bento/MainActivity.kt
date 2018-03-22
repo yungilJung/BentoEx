@@ -44,9 +44,6 @@ class MainActivity : AppCompatActivity() {
         (toggle as ActionBarDrawerToggle).syncState()     // 삼단 메뉴 아이콘 출력을 한다. 두라인이 함께 실행되어야 됨.
 
         list = ArrayList<ListItem>()
-
-
-
         // 데이터를 조회해서 바인딩 한다.
         queue = Volley.newRequestQueue(this@MainActivity)
         val currentRequest = StringRequest(Request.Method.GET, "http://jdv.iptime.org:8181/api/productList", Response.Listener { response -> parseJsonCurrent(response, queue) }, Response.ErrorListener { })
@@ -58,9 +55,12 @@ class MainActivity : AppCompatActivity() {
         for(x in 0..jarray.length()-1){
             val jObject = jarray.getJSONObject(x)
             var item : ListItem = ListItem();
+            item.Id = jObject.getString("Id")
             item.Price = jObject.getString("Price")
             item.Name = jObject.getString("Name")
             item.ImageURL  = jObject.getString("ImageURL")
+            item.Calorie = jObject.getString("Calorie")
+            item.Information =jObject.getString("Information")
             list.add(item);
         }
         adapter = CustomAdaptor(this, R.layout.item_list,list)

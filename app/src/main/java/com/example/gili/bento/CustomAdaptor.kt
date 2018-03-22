@@ -1,6 +1,7 @@
 package com.example.gili.bento
 
 import android.content.Context
+import android.content.Intent
 import android.graphics.Bitmap
 import android.os.Parcel
 import android.os.Parcelable
@@ -15,7 +16,6 @@ import com.android.volley.Response
 import com.android.volley.VolleyError
 import com.android.volley.toolbox.ImageLoader
 import com.android.volley.toolbox.ImageRequest
-import com.android.volley.toolbox.NetworkImageView
 import java.util.ArrayList
 
 /**
@@ -40,30 +40,35 @@ open class CustomAdaptor(context: Context, resource: Int, items: ArrayList<ListI
 
         var txtProduct : TextView = convertView.findViewById(R.id.txtProduct)
         var txtPrice : TextView = convertView.findViewById(R.id.txtPrice)
-        var imgProduct : NetworkImageView = convertView.findViewById(R.id.imgProduct)
+        var imgProduct : ImageView = convertView.findViewById(R.id.imgProduct)
 
         txtProduct.setText(item.Name)
         txtPrice.setText(item.Price)
 
         val url  = "http://jdv.iptime.org:8181/filestorage/Prod/" + item.ImageURL
-
-/*        val imageRequest = ImageRequest(url, Response.Listener { response ->
+        val imageRequest = ImageRequest(url, Response.Listener { response ->
             //vo.image = response
             imgProduct.setImageBitmap(response)
-            this.notifyDataSetChanged()
+            //this.notifyDataSetChanged()
         }, 0, 0, ImageView.ScaleType.CENTER_CROP, null, Response.ErrorListener { })
-        queue.add(imageRequest)*/
-        val imageLoader = ImageLoader(queue, object : ImageLoader.ImageCache {
+
+        queue.add(imageRequest)
+        /*val imageLoader = ImageLoader(queue, object : ImageLoader.ImageCache {
             override fun getBitmap(url: String): Bitmap? {
                 return null
             }
-
             override fun putBitmap(url: String, bitmap: Bitmap) {
-
             }
         })
-        imgProduct.setImageUrl(url, imageLoader)
-        this.notifyDataSetChanged()
+        imgProduct.setImageUrl(url, imageLoader)*/
+        //this.notifyDataSetChanged()
+
+        imgProduct.setOnClickListener{
+            item.Id;
+            var intent: Intent = Intent(context, ItemDetailActivity::class.java);
+            intent.putExtra("Id", item.Id)
+            context.startActivity(intent)
+        }
         return convertView
     }
 
