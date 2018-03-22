@@ -22,6 +22,11 @@ class ItemDetailActivity : AppCompatActivity() {
         setContentView(R.layout.activity_item_detail)
         val intent = this.intent
         val id : String = intent.getExtras().getString("Id")
+
+        setSupportActionBar(toolbar_detail)
+        supportActionBar!!.setDisplayShowTitleEnabled(false) // 툴바의 제목을 표시를 한다.
+        supportActionBar!!.setDisplayHomeAsUpEnabled(true) // 삼단 메뉴 아이콘 출력을 한다.
+
         queue = Volley.newRequestQueue(this@ItemDetailActivity)
         val currentRequest = StringRequest(Request.Method.GET, "http://jdv.iptime.org:8181/api/product/"+id, Response.Listener { response -> parseJsonCurrent(response, queue) }, Response.ErrorListener { })
         queue.add(currentRequest)

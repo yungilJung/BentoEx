@@ -7,6 +7,14 @@
     android:background="?attr/colorButtonNormal"
     android:orientation="vertical">
 
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar_detail"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="#FFFF0000"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:title="벤토"></android.support.v7.widget.Toolbar>
+
     <ImageView
         android:id="@+id/imgProduct"
         android:layout_width="match_parent"
