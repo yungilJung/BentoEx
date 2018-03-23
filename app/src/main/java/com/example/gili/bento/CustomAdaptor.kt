@@ -17,6 +17,9 @@ import com.android.volley.VolleyError
 import com.android.volley.toolbox.ImageLoader
 import com.android.volley.toolbox.ImageRequest
 import java.util.ArrayList
+import android.app.Activity
+
+
 
 /**
  * Created by gili on 2018-03-20.
@@ -68,6 +71,9 @@ open class CustomAdaptor(context: Context, resource: Int, items: ArrayList<ListI
             var intent: Intent = Intent(context, ItemDetailActivity::class.java);
             intent.putExtra("Id", item.Id)
             context.startActivity(intent)
+            if (context is Activity) {
+                (context as Activity).overridePendingTransition(R.anim.enter, R.anim.exit)
+            }
         }
         return convertView
     }

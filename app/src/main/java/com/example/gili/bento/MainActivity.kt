@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.support.v7.app.ActionBarDrawerToggle
 import android.view.MenuItem
 import android.view.View
+import android.widget.Toast
 import com.android.volley.Request
 import com.android.volley.RequestQueue
 import com.android.volley.Response
@@ -39,6 +40,23 @@ class MainActivity : AppCompatActivity() {
                 isDrawerOpend = false
             }
         }
+
+        main_drawer_view.setNavigationItemSelectedListener {
+            var intent = when(it.itemId){
+                R.id.menuOrder->
+                        null
+                R.id.menuOrderOrg->
+                        null
+                R.id.menuStore->
+                        null
+                R.id.menuQNA->
+                        null
+                else -> null
+            }
+            drawer.closeDrawers()
+            true
+        }
+
         drawer.addDrawerListener(toggle as ActionBarDrawerToggle)
         supportActionBar!!.setDisplayHomeAsUpEnabled(true) // 삼단 메뉴 아이콘 출력을 한다.
         (toggle as ActionBarDrawerToggle).syncState()     // 삼단 메뉴 아이콘 출력을 한다. 두라인이 함께 실행되어야 됨.

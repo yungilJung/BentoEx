@@ -4,14 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="?attr/colorButtonNormal"
+    android:background="#cdcdcd"
     android:orientation="vertical">
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar_detail"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        android:background="#FFFF0000"
+        android:background="#cdcdcd"
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
         app:title="벤토"></android.support.v7.widget.Toolbar>
 

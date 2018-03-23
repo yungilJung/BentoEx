@@ -3,6 +3,7 @@ package com.example.gili.bento
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.view.MenuItem
 import android.widget.ImageView
 import com.android.volley.Request
 import com.android.volley.RequestQueue
@@ -26,7 +27,10 @@ class ItemDetailActivity : AppCompatActivity() {
         setSupportActionBar(toolbar_detail)
         supportActionBar!!.setDisplayShowTitleEnabled(false) // 툴바의 제목을 표시를 한다.
         supportActionBar!!.setDisplayHomeAsUpEnabled(true) // 삼단 메뉴 아이콘 출력을 한다.
-
+        supportActionBar!!.setHomeButtonEnabled(true)
+        toolbar_detail.setOnClickListener {
+            finish()
+        }
         queue = Volley.newRequestQueue(this@ItemDetailActivity)
         val currentRequest = StringRequest(Request.Method.GET, "http://jdv.iptime.org:8181/api/product/"+id, Response.Listener { response -> parseJsonCurrent(response, queue) }, Response.ErrorListener { })
         queue.add(currentRequest)
@@ -54,5 +58,11 @@ class ItemDetailActivity : AppCompatActivity() {
             imgProduct.setImageBitmap(response)
         }, 0, 0, ImageView.ScaleType.CENTER_CROP, null, Response.ErrorListener { })
         queue.add(imageRequest)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem?): Boolean {
+        finish()
+        overridePendingTransition(R.anim.left_to_right, R.anim.right_to_left);
+        return super.onOptionsItemSelected(item)
     }
 }
