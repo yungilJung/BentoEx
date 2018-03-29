@@ -10,13 +10,14 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
         <android.support.v7.widget.Toolbar
             android:id="@+id/toolbar_drawer"
             android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
+            android:layout_height="?android:attr/actionBarSize"
             android:background="#FFFF0000"
             android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-            app:title="벤토"></android.support.v7.widget.Toolbar>
+            app:title="벤토" />
 
         <ListView
             android:id="@+id/lst_product"

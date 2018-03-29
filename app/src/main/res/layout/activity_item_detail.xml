@@ -19,6 +19,7 @@
         android:id="@+id/imgProduct"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:scaleType="centerCrop"
         app:srcCompat="@drawable/ic_launcher_background" />
 
     <LinearLayout

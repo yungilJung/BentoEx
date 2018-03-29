@@ -1,35 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content"
+    android:paddingBottom="5dp">
 
     <ImageView
         android:id="@+id/imgProduct"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="160dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:scaleType="centerCrop"
-        />
+        android:scaleType="centerCrop" />
 
     <TextView
         android:id="@+id/txtProduct"
-        android:text="새치고기고기도시락"
-        android:paddingLeft="5dp"
-        android:textStyle="bold"
-        android:textColor="@android:color/darker_gray"
-        android:layout_below="@+id/imgProduct"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imgProduct"
+        android:paddingLeft="5dp"
+        android:text="새치고기고기도시락"
+        android:textColor="@android:color/darker_gray"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/txtPrice"
-        android:text="2000원"
-        android:paddingLeft="5dp"
-        android:textColor="@android:color/darker_gray"
-        android:layout_below="@+id/txtProduct"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txtProduct"
+        android:paddingLeft="5dp"
+        android:text="2000원"
+        android:textColor="@android:color/darker_gray" />
 
     <TextView
         android:id="@+id/txtDetail"
