@@ -1,5 +1,6 @@
 package com.example.gili.bento
 
+import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.design.widget.TabLayout
@@ -44,8 +45,10 @@ class NewMainActivity : AppCompatActivity() {
         }
         main_drawer_view.setNavigationItemSelectedListener {
             var intent = when(it.itemId){
-                R.id.menuOrder->
-                    null
+                R.id.menuOrder-> {
+                    var intent: Intent = Intent(this, ItemRegisterActivity::class.java)
+                    this.startActivity(intent)
+                }
                 R.id.menuOrderOrg->
                     null
                 R.id.menuStore->
